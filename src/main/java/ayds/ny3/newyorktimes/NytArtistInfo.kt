@@ -14,10 +14,3 @@ data class NytArtistInfo(
     override val artistURL: String,
     override var isLocallyStored: Boolean = false
 ) : ArtistInfo
-
-object EmptyArtistInfo : ArtistInfo {
-    override val artistName: String = ""
-    override val artistInfo: String = ""
-    override val artistURL: String = ""
-    override var isLocallyStored: Boolean = false
-}

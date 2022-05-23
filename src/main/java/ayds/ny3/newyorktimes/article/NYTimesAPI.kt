@@ -1,7 +1,8 @@
 package ayds.ny3.newyorktimes.article
 
 import retrofit2.Call
-import retrofit2.http.*
+import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface NYTimesAPI {
     @GET("articlesearch.json?api-key=fFnIAXXz8s8aJ4dB8CVOJl0Um2P96Zyx")
