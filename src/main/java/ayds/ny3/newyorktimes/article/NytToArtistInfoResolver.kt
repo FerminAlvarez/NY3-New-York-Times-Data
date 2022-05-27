@@ -43,10 +43,10 @@ internal class JsonToArtistInfoResolver : NytToArtistInfoResolver {
     }
 
     private fun JsonElement.getArtistInfo() =
-        abstractToString(this.asJsonObject[ayds.ny3.newyorktimes.article.SECTION_ABSTRACT])
+        abstractToString(this.asJsonObject[SECTION_ABSTRACT])
 
     private fun JsonElement.getArtistUrl() =
-        this.asJsonObject[ayds.ny3.newyorktimes.article.SECTION_WEB_URL].asString
+        this.asJsonObject[SECTION_WEB_URL].asString
 
     private fun abstractToString(abstractNYT: JsonElement?): String =
         abstractNYT?.let { it.asString.replace("\\n", "\n") } ?: ""
