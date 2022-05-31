@@ -1,7 +1,7 @@
 package ayds.ny3.newyorktimes.article
 
 import ayds.ny3.newyorktimes.NytArticleService
-import ayds.ny3.newyorktimes.NytCard
+import ayds.ny3.newyorktimes.NytArtistInfo
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
@@ -14,9 +14,9 @@ internal class NytArticleServiceImpl(
 
     private val nytimesAPI: NYTimesAPI = createRetrofit()
 
-    override fun getArtistInfo(name: String): NytCard? {
+    override fun getArtistInfo(name: String): NytArtistInfo? {
         val callResponse = getArtistInfoFromService(name)
-        return nytToArtistInfoResolver.getArtistInfoFromExternalData(callResponse.body())
+        return nytToArtistInfoResolver.getArtistInfoFromExternalData(callResponse.body(), name)
     }
 
     private fun createRetrofit(): NYTimesAPI {
