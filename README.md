@@ -46,7 +46,7 @@ import ayds.ny3.newyorktimes.NytArticleService
 
 Paso 2: Obtener una instancia del servicio
 ```kotlin
-val nytArticleService: NytArticleService = ayds.ny3.newyorktimes.NytInjector.nytArticleService
+val nytArticleService: NytArticleService = NytInjector.nytArticleService
 ```
 
 Ejemplo de uso:
@@ -57,6 +57,6 @@ val serviceNytArtistInfo = nytArticleService.getArtistInfo(artist)
 --- 
 ## Edge cases
 
-En caso de que no haya conexión a internet, getArtistInfo lanzará una excepción
+En caso de que no haya conexión a internet, getArtistInfo lanzará una excepción de tipo Exception con el mensaje "No Response from api"
 
-En caso de que no se haya encontrado una descripción devolverá null
+En caso de que no se haya encontrado una descripción devolverá un objeto null
