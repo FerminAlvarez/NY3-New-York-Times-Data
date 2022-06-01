@@ -10,7 +10,7 @@ private const val NYT_API_URL = "https://api.nytimes.com/svc/search/v2/"
 
 object NytInjector {
 
-    val nyTimesAPI: NYTimesAPI = createRetrofit()
+    private val nyTimesAPI: NYTimesAPI = createRetrofit()
 
     private fun createRetrofit(): NYTimesAPI {
         val retrofit = Retrofit.Builder()
